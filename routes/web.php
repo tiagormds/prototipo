@@ -16,8 +16,13 @@ Route::get('/', function () {
 });
 
 Route::get('/imoveis', 'PropertyController@index')->name('imoveis.index');
+
 Route::get('/imoveis/novo', 'PropertyController@create')->name('imoveis.create');
 Route::post('/imoveis/store', 'PropertyController@store')->name('imoveis.store');
+
+Route::get('/imoveis/edit/{name}', 'PropertyController@edit')->name('imoveis.edit');
+Route::put('/imoveis/update/{name}', 'PropertyController@update')->name('imoveis.update');
+
 Route::get('/imoveis/show/{name}', 'PropertyController@show')->name('imoveis.show');
-Route::get('/imoveis/edit/{id}', 'PropertyController@edit')->name('imoveis.edit');
-Route::delete('/imoveis/delete/{id}', 'PropertyController@destroy')->name('imoveis.destroy');
+
+Route::get('/imoveis/delete/{name}', 'PropertyController@destroy')->name('imoveis.destroy');
